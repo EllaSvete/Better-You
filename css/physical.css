@@ -1,8 +1,20 @@
-/*IMPORTS */
+
+
+/* 
+****** PHYSICAL WELLNESS COLORS ******
+YELLOW: rgb(255,255,153);
+ORANGE: rgb(255,199,153);
+RED-ORANGE: rgb(255,161,153);
+DARK BLUE: rgb(0,67,131);
+LIGHT BLUE: rgb(5,134,195);
+
+rgb(255,255,153),rgb(255,199,153),rgb(255,161,153),rgb(0,67,131),rgb(5,134,195)
+
+IMPORTS */
 @import url('https://fonts.googleapis.com/css2?family=Merriweather&display=swap');
 
 html { 
-  background: linear-gradient(rgb(169, 159, 228),rgb(255,255,153),rgb(0,67,131)) no-repeat center center fixed; 
+  background: linear-gradient(rgb(255,255,153),rgb(255,199,153),rgb(255,161,153),rgb(0,67,131),rgb(5,134,195)) no-repeat center center fixed; 
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -18,38 +30,32 @@ body {
   border-radius: 15px;
   display: flex;
   justify-content: center;
-  margin-left: 20px;
-  margin-top: 20px;
+  margin-left: 30px;
+  margin-top: 30px;
   font-size: 30px;
   width: max-content;
-  margin-bottom: 30px;
+  background-color: white;
 }
 
 #title {
   border-radius: 15px;
   display: flex;
-  flex-wrap: wrap;
   justify-content: center;
   text-align: center;
-  margin-top: 60px;
+  margin-top: 30px;
   margin: auto;
-  width: max-content;
+  width: 50%;
   font-size: 30px;
-  font-weight: bold;
   padding: 15px;
   background-color: white;
   box-shadow: 3px 3px 2px 1px rgb(82, 101, 119);
-  height: 100px;
+  height: auto;
 }
 
-#break {
-  flex-basis: 100%;
-  height: 0%;
-}
-#appoint {
+#aspect-box {
   border-radius: 15px;
-  display: flex;
-  justify-content: center;
+  column-count: 2;
+  line-height: 50px;
   text-align: center;
   margin-top: 30px;
   margin-left: auto;
