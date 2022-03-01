@@ -1,8 +1,16 @@
-/*IMPORTS */
+/*
+****** MENTAL WELLNESS COLORS ******
+SOOTHING LAVENDER: rgb(196,191,231);
+PISTACHIO GREEN: rgb(184,216,179);
+LAVENDER GREY: rgb(198,201,208);
+POWDERED PINK: rgb(242,215,224);
+SKY BLUE: rgb(120,171,198);
+
+IMPORTS */
 @import url('https://fonts.googleapis.com/css2?family=Merriweather&display=swap');
 
 html { 
-  background: linear-gradient(rgb(169, 159, 228),rgb(255,255,153),rgb(0,67,131)) no-repeat center center fixed; 
+  background: linear-gradient(rgb(169, 159, 228),rgb(161, 216, 152),rgb(151, 167, 204),rgb(235, 165, 188),rgb(90, 160, 197)) no-repeat center center fixed; 
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
