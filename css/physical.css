@@ -14,7 +14,7 @@ IMPORTS */
 @import url('https://fonts.googleapis.com/css2?family=Merriweather&display=swap');
 
 html { 
-  background: linear-gradient(rgb(255,255,153),rgb(255,199,153),rgb(255,161,153),rgb(0,67,131),rgb(5,134,195)) no-repeat center center fixed; 
+  background: linear-gradient(rgb(255,255,153),rgb(255,199,153),rgb(255,161,153),rgb(5,134,195),rgb(0,67,131)) no-repeat center center fixed; 
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -35,6 +35,7 @@ body {
   font-size: 30px;
   width: max-content;
   background-color: white;
+  margin-bottom: 30px;
 }
 
 #title {
@@ -55,12 +56,12 @@ body {
 #aspect-box {
   border-radius: 15px;
   column-count: 2;
-  line-height: 50px;
+  line-height: 70px;
   text-align: center;
   margin-top: 30px;
   margin-left: auto;
   margin-right: auto;
-  width: 50%;
+  width: 30%;
   font-size: 20px;
   padding: 15px;
   background-color: white;
@@ -68,18 +69,126 @@ body {
   height: 150px;
 }
 
-#ment-phys {
+#aspect-box button {
+  border-radius: 15px;
+  font-family: 'Merriweather', serif;
+  background-color: rgb(255,255,153);
+  border-color: rgb(255,255,153);
+  box-shadow: 2px 2px 1px 0.5px rgb(82, 101, 119);
+  width: 150px;
+  color: rgb(0, 32, 61);
+  font-weight: bold;
+  font-size: 20px;
+}
+
+#aspect-box button:hover {
+  cursor: pointer;
+}
+
+
+#phrase {
   border-radius: 15px;
   display: flex;
   justify-content: center;
   text-align: center;
   margin-top: 30px;
-  margin-left: auto;
-  margin-right: auto;
+  margin: auto;
   width: 50%;
-  font-size: 20px;
+  font-size: 30px;
   padding: 15px;
   background-color: white;
   box-shadow: 3px 3px 2px 1px rgb(82, 101, 119);
-  height: 200px;
+  height: auto;
+  margin-bottom: 30px;
+}
+
+#activity-card {
+  border-radius: 15px;
+  justify-content: center;
+  text-align: center;
+  margin-top: 30px;
+  margin: auto;
+  width: 50%;
+  font-size: 25px;
+  padding: 15px;
+  background-color: white;
+  box-shadow: 3px 3px 2px 1px rgb(82, 101, 119);
+  height: auto;
+  margin-bottom: 30px;
+}
+
+#activity-card img {
+  border-radius: 15px;
+  width: 50%;
+}
+
+#activity-name {
+  margin-bottom: 10px;
+  font-size: 30px;
+  background-color:rgb(255,199,153);
+  width: max-content;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 10px;
+  border-radius: 15px;
+  box-shadow: 3px 3px 2px 1px rgb(82, 101, 119);
+}
+
+#activity-description {
+  font-size: 17px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 70%;
+  margin-top: 15px;
+  margin-bottom: 15px;
+  background-color: rgb(252, 252, 180);
+  padding: 10px;
+  border-radius: 15px;
+  box-shadow: 3px 3px 2px 1px rgb(82, 101, 119);
+}
+
+#tips-obstacles {
+  border-radius: 15px;
+  column-count: 2;
+}
+
+#obs {
+  padding: 15px;
+  background-color: rgb(250, 172, 165);
+  border-radius: 15px;
+  box-shadow: 3px 3px 2px 1px rgb(82, 101, 119);
+}
+
+#obs-title {
+  font-size: 18px;
+  margin-bottom: 10px;
+  text-decoration: underline;
+}
+
+#tips {
+  padding: 15px;
+  background-color: rgb(125, 204, 241);
+  border-radius: 15px;
+  box-shadow: 3px 3px 2px 1px rgb(82, 101, 119);
+}
+
+#tip-title {
+  font-size: 18px;
+  margin-bottom: 10px;
+  text-decoration: underline;
+}
+
+#obs-list {
+  font-size: 15px;
+  line-height: 20px;
+}
+
+#tip-list {
+  font-size: 15px;
+  line-height: 20px;
+}
+
+#bold {
+  color:rgb(5,134,195);
 }
