@@ -10,6 +10,10 @@ const link  = document.createElement('link');
 const title = document.getElementById('title');
 let cardChoice = NaN;
 
+// DOM REFERENCES 
+
+let myMain = document.getElementById('main'); //Is this correct for where 
+
 //constructor function moved to own js files for card decks
 
 //img loader for card back - if person clicks physical or mental ID cardback styling
