@@ -1,6 +1,6 @@
 'use strict';
 
-let selfEsteemCardList = [/*'card1', 'card2', 'card3', 'card4', 'card5'*/];
+let selfEsteemCardList = ['selfEsteem1', 'selfEsteem2', 'selfEsteem3', 'selfEsteem4', 'selfEsteem5'];
 let selfEsteemDeck = [];
 //Constructor function for self-esteem cards
 
