@@ -36,33 +36,32 @@ body {
 #title {
   border-radius: 15px;
   display: flex;
-  flex-wrap: wrap;
   justify-content: center;
   text-align: center;
-  margin-top: 60px;
+  margin-top: 30px;
   margin: auto;
-  width: max-content;
+  width: 50%;
   font-size: 30px;
-  font-weight: bold;
   padding: 15px;
   background-color: white;
   box-shadow: 3px 3px 2px 1px rgb(82, 101, 119);
-  height: 100px;
+  height: auto;
 }
 
 #break {
   flex-basis: 100%;
   height: 0%;
 }
-#appoint {
+
+#aspect-box {
   border-radius: 15px;
-  display: flex;
-  justify-content: center;
+  column-count: 2;
+  line-height: 70px;
   text-align: center;
   margin-top: 30px;
   margin-left: auto;
   margin-right: auto;
-  width: 50%;
+  width: 30%;
   font-size: 20px;
   padding: 15px;
   background-color: white;
@@ -70,18 +69,125 @@ body {
   height: 150px;
 }
 
-#ment-phys {
+#aspect-box button {
+  border-radius: 15px;
+  font-family: 'Merriweather', serif;
+  background-color: rgb(242,215,224);
+  border-color: rgb(242,215,224);
+  box-shadow: 2px 2px 1px 0.5px rgb(82, 101, 119);
+  width: 150px;
+  color: rgb(0, 32, 61);
+  font-weight: bold;
+  font-size: 20px;
+}
+
+#aspect-box button:hover {
+  cursor: pointer;
+}
+
+#phrase {
   border-radius: 15px;
   display: flex;
   justify-content: center;
   text-align: center;
   margin-top: 30px;
-  margin-left: auto;
-  margin-right: auto;
+  margin: auto;
   width: 50%;
-  font-size: 20px;
+  font-size: 30px;
   padding: 15px;
   background-color: white;
   box-shadow: 3px 3px 2px 1px rgb(82, 101, 119);
-  height: 200px;
+  height: auto;
+  margin-bottom: 30px;
 }
+
+#activity-card {
+  border-radius: 15px;
+  justify-content: center;
+  text-align: center;
+  margin-top: 30px;
+  margin: auto;
+  width: 50%;
+  font-size: 25px;
+  padding: 15px;
+  background-color: white;
+  box-shadow: 3px 3px 2px 1px rgb(82, 101, 119);
+  height: auto;
+}
+
+#activity-card img {
+  border-radius: 15px;
+  width: 40%;
+}
+
+#activity-name {
+  margin-bottom: 10px;
+  font-size: 30px;
+  background-color:rgb(242,215,224);
+  width: max-content;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 10px;
+  border-radius: 15px;
+  box-shadow: 3px 3px 2px 1px rgb(82, 101, 119);
+}
+
+#activity-description {
+  font-size: 17px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 70%;
+  margin-top: 15px;
+  margin-bottom: 15px;
+  background-color: rgb(252, 252, 180);
+  padding: 10px;
+  border-radius: 15px;
+  box-shadow: 3px 3px 2px 1px rgb(82, 101, 119);
+}
+
+#tips-obstacles {
+  border-radius: 15px;
+  column-count: 2;
+}
+
+#obs {
+  padding: 10px;
+  background-color: rgb(196,191,231);
+  border-radius: 15px;
+  box-shadow: 3px 3px 2px 1px rgb(82, 101, 119);
+}
+
+#obs-title {
+  font-size: 18px;
+  margin-bottom: 10px;
+  text-decoration: underline;
+}
+
+#tips {
+  padding: 10px;
+  background-color: rgb(184,216,179);
+  border-radius: 15px;
+  box-shadow: 3px 3px 2px 1px rgb(82, 101, 119);
+}
+
+#tip-title {
+  font-size: 18px;
+  margin-bottom: 10px;
+  text-decoration: underline;
+}
+
+#obs-list {
+  font-size: 15px;
+  line-height: 20px;
+}
+
+#tip-list {
+  font-size: 15px;
+  line-height: 20px;
+}
+
+
+
+
+
