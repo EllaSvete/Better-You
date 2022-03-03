@@ -23,3 +23,11 @@ function createSelfEsteemDeck(){
   console.log(mentalCards);
 }
 
+// let cards = document.querySelectorAll('selfEsteemCardList');
+
+// [...cards].forEach((card)=>{
+//   card.addEventListener( 'click', function() {
+//     card.classList.toggle('is-flipped');
+//   });
+// });
+

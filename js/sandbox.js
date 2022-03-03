@@ -4,5 +4,3 @@
 
 
 
-const storageInput =document.querySelector(localStorage)
-const storage
