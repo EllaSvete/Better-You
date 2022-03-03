@@ -10,9 +10,10 @@ let cardChoice = NaN;
 
 // DOM REFERENCES
 const title = document.getElementById('title');
-const option = document.getElementById('button');
+const option = document.getElementById('buttons');
 const aspect = document.getElementById('aspects');
 const cardArea = document.getElementById('cardarea');
+const main = document.getElementsByTagName('master');
 
 //constructor function moved to own js files for card decks
 
@@ -71,7 +72,7 @@ function aspectMainChange() {
   while (appPoint.firstChild) {
     appPoint.removeChild(appPoint.firstChild);
   }
-  let buttons = document.getElementById('button');
+  let buttons = document.getElementById('buttons');
   while (buttons.firstChild) {
     buttons.removeChild(buttons.firstChild);
   }
@@ -170,9 +171,9 @@ function handleOption(event) {
 
   console.log('main changed');
   console.log('cardType:', cardType);
-  option.id = 'aspects';
+  option.parentElement.removeChild(option);
   option.removeEventListener('click', handleOption);
-
+}
 
 //event handler for aspect of wellness option chosen
 function handleAspect(event) {
@@ -184,10 +185,8 @@ function handleAspect(event) {
   cardTitleChange();
   console.log('title changed');
   cardMain();
-
-
+  aspect.parentNode.removeChild(aspect);
   // next step: selected aspect takes you to three cards of sub-category and user selects
-
 }
 
 //event handler for what card has been clicked
