@@ -1,14 +1,15 @@
 'use strict';
 
-let nutritionCardList = [/*'card1', 'card2', 'card3', 'card4', 'card5'*/];
+let nutritionCardList = ['nutrition1', 'nutrition2', 'nutrition3', 'nutrition4', 'nutrition5'];
 let nutritionDeck = [];
 //Constructor function for self-esteem cards
 
-function NutritionCard(name, fileExtension = '.png') {
+function NutritionCard(name, fileExtension = 'png') {
   this.name = name;
-  this.src = `img/${name}.${fileExtension}`;
+  this.src = `./img/${name}.${fileExtension}`;
   this.alt = `${name}`;
   this.subType = 'physical';
+  this.deckType = 'physical';
   this.completed = 0;
   nutritionDeck.push(this);
 }
