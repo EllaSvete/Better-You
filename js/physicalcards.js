@@ -1,7 +1,7 @@
 'use strict';
 
 let nutritionCardList = ['nutrition1', 'nutrition2', 'nutrition3', 'nutrition4', 'nutrition5'];
-let nutritionDeck = [];
+
 //Constructor function for self-esteem cards
 
 function NutritionCard(name, fileExtension = 'png') {
@@ -22,3 +22,4 @@ function createNutritionDeck(){
   physicalCards.push(nutritionDeck);
 }
 
+initializePage();
