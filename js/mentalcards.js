@@ -4,11 +4,12 @@ let selfEsteemCardList = ['selfEsteem1', 'selfEsteem2', 'selfEsteem3', 'selfEste
 let selfEsteemDeck = [];
 //Constructor function for self-esteem cards
 
-function SelfEsteemCard(name, fileExtension = '.png') {
+function SelfEsteemCard(name, fileExtension = 'png') {
   this.name = name;
-  this.src = `img/${name}.${fileExtension}`;
+  this.src = `./img/${name}.${fileExtension}`;
   this.alt = `${name}`;
-  this.subType = 'mental';
+  this.subType = 'selfEsteem';
+  this.deckType = 'self esteem';
   this.completed = 0;
   selfEsteemDeck.push(this);
 }
@@ -19,5 +20,6 @@ function createSelfEsteemDeck(){
   }
   console.log(selfEsteemDeck);
   mentalCards.push(selfEsteemDeck);
+  console.log(mentalCards);
 }
 createSelfEsteemDeck();
