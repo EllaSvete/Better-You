@@ -21,4 +21,4 @@ function createNutritionDeck(){
   console.log(nutritionDeck);
   physicalCards.push(nutritionDeck);
 }
-createNutritionDeck();
+

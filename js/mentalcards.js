@@ -22,4 +22,4 @@ function createSelfEsteemDeck(){
   mentalCards.push(selfEsteemDeck);
   console.log(mentalCards);
 }
-createSelfEsteemDeck();
+
