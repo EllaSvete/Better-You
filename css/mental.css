@@ -26,22 +26,26 @@ body {
   border-radius: 15px;
   display: flex;
   font-size: 30px;
-  width: 120px;
 }
 
 #title {
   border-radius: 15px;
-  display: flex;
   justify-content: center;
   text-align: center;
   margin-top: 30px;
   margin: auto;
   width: 50%;
   font-size: 16px;
-  background-color: white;
+  background-color: rgb(200, 233, 248);
   box-shadow: 3px 3px 2px 1px rgb(82, 101, 119);
   height: auto;
   color: black;
+}
+
+#title h1 {
+  border: 7px solid rgb(0,67,131);
+  border-radius: 15px;
+  padding: 5px;
 }
 
 #main {
@@ -83,11 +87,6 @@ body {
   margin-top: 30px;
 }
 
-button {
-  background-color: rgb(184,216,179);
-  border-color: rgb(184,216,179);
-}
-
 #cardarea {
   margin-left: auto;
   margin-right: auto;
@@ -97,4 +96,10 @@ button {
 #cardarea img {
   border-radius: 15px;
   box-shadow: 3px 3px 2px 1px rgb(82, 101, 119);
+}
+
+#cardarea img:hover {
+  cursor:pointer;
+  transform: scale(1.05);
+  transition: 500ms;
 }
