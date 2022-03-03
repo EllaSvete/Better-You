@@ -1,7 +1,7 @@
 'use strict';
 
 let selfEsteemCardList = ['selfEsteem1', 'selfEsteem2', 'selfEsteem3', 'selfEsteem4', 'selfEsteem5'];
-let selfEsteemDeck = [];
+
 //Constructor function for self-esteem cards
 
 function SelfEsteemCard(name, fileExtension = 'png') {
@@ -22,4 +22,4 @@ function createSelfEsteemDeck(){
   mentalCards.push(selfEsteemDeck);
   console.log(mentalCards);
 }
-createSelfEsteemDeck();
+
