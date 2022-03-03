@@ -7,13 +7,18 @@ let cardType = 'none';
 let cardSubType = 'none';
 let cardDisplay = 'none';
 let cardChoice = NaN;
+let selfEsteemDeck = [];
+let nutritionDeck = [];
 
 // DOM REFERENCES
 const title = document.getElementById('title');
 const option = document.getElementById('buttons');
 const aspect = document.getElementById('aspects');
 const cardArea = document.getElementById('cardarea');
-const main = document.getElementsByTagName('master');
+let retrieveMentalDeck1 = localStorage.getItem('selfEsteemDeckStorage');
+console.log(retrieveMentalDeck1)
+let retrievePhysicalDeck1 = localStorage.getItem('nutritionDeckStorage');
+
 
 //constructor function moved to own js files for card decks
 
@@ -127,6 +132,7 @@ function cardPicker() {
   }
   else if (cardType === 'physical') {
     cardChoice = Math.floor(Math.random() * nutritionCardList.length);
+    console.log(cardChoice);
     let cardOne = document.createElement('img');
     cardOne.src = physicalCards[0][cardChoice].src;
     cardOne.id = 'cardOne';
@@ -193,6 +199,7 @@ function handleAspect(event) {
 function handleClick() {
   cardPicker();
   cardArea.removeEventListener('click', handleClick);
+  storeData();
 }
 //card clicked flips displays tasks
 
@@ -206,3 +213,43 @@ option.addEventListener('click', handleOption);
 aspect.addEventListener('click', handleAspect);
 cardArea.addEventListener('click', handleClick);
 // /*elementId*/.addEventListener('click', handleButton);
+
+
+// Store data from selection
+function storeData(){
+let stringMentalDeck1 = JSON.stringify(selfEsteemDeck);
+let stringPhysicalDeck1 = JSON.stringify(nutritionDeck);
+localStorage.setItem('selfEsteemDeckStorage', stringMentalDeck1);
+localStorage.setItem('nutritionDeckStorage', stringPhysicalDeck1);
+}
+
+//Pull data from storage
+
+
+//parse data from storage
+function parseData(){
+let parsedMentalDeck1 = JSON.parse(retrieveMentalDeck1);
+selfEsteemDeck = parsedMentalDeck1;
+console.log('sed', selfEsteemDeck)
+let parsedPhysicalDeck1 = JSON.parse(retrievePhysicalDeck1);
+nutritionDeck = parsedPhysicalDeck1;
+//distribute Data
+mentalCards.push(selfEsteemDeck);
+console.log(mentalCards);
+physicalCards.push(nutritionDeck);
+console.log(physicalCards);
+}
+
+function initializePage(){
+  if (retrieveMentalDeck1) {
+    parseData();
+  }
+  else {
+    buildDecks();
+  }
+}
+
+function buildDecks(){
+createSelfEsteemDeck();
+createNutritionDeck();
+}
