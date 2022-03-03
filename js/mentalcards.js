@@ -8,7 +8,7 @@ function SelfEsteemCard(name, fileExtension = '.png') {
   this.name = name;
   this.src = `img/${name}.${fileExtension}`;
   this.alt = `${name}`;
-  this.subType = 'mental';
+  this.subType = 'selfEsteem';
   this.completed = 0;
   selfEsteemDeck.push(this);
 }
