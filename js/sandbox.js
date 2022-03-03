@@ -31,3 +31,7 @@
 // /*elementId*/.addEventListener('click', handleClick);
 // /*elementId*/.addEventListener('click', handleButton);
 
+
+
+const storageInput =document.querySelector(localStorage)
+const storage
