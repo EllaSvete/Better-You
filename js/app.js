@@ -13,6 +13,7 @@ let nutritionDeck = [];
 // DOM REFERENCES
 const title = document.getElementById('title');
 const option = document.getElementById('buttons');
+const quest = document.getElementById('question');
 const aspect = document.getElementById('aspects');
 const cardArea = document.getElementById('cardarea');
 let retrieveMentalDeck1 = localStorage.getItem('selfEsteemDeckStorage');
@@ -191,6 +192,7 @@ function handleAspect(event) {
   cardTitleChange();
   console.log('title changed');
   cardMain();
+  quest.parentNode.removeChild(quest);
   aspect.parentNode.removeChild(aspect);
   // next step: selected aspect takes you to three cards of sub-category and user selects
 }
