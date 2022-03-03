@@ -8,25 +8,26 @@ let cardSubType = 'none';
 let cardChoice = NaN;
 
 // DOM REFERENCES 
-const main = document.getElementById('main');
 const title = document.getElementById('title');
 const option = document.getElementById('button');
 const aspect = document.getElementById('aspects');
+const cardArea = document.getElementById('cardarea');
 
 //constructor function moved to own js files for card decks
 
 //img loader for card back - if person clicks physical or mental ID cardback styling
 //TODO: link to cardback ID in HTML 
 function cardBackLoader() {
-  cssChange();
-  let cardBack = document.getElementById(/*TODO*/);
+  let cardOneBack = document.createElement('img');
+  cardOneBack.id = 'cardback';
+  cardOneBack.class = 'card';
   if (cardType === 'physical') {
-    cardBack.src = NaN;
+    cardOneBack.src = './img/physicalcardback.png';
   }
   else if (cardType === 'mental'); {
-    cardBack.src = NaN;
-
+    cardOneBack.src = './img/mentalcardback.png';
   }
+  cardArea.appendChild(cardOneBack);
   console.log('card back loaded');
 }
 
@@ -49,7 +50,7 @@ function cssChange() {
   }
 }
 
-// Change to fram 2 of wireframe using JS to modify HTML
+// Change to frame 2 of wireframe using JS to modify HTML
 function aspectTitleChange() {
   //Remove title HTML children for replacing
   while (title.firstChild) {
@@ -81,12 +82,12 @@ function aspectMainChange() {
     question.removeChild(question.firstChild);
   }
   if (cardType === 'mental') {
-    //Repopulate Buttons with either mental or physical
+    //Repopulate Buttons with either mental or physical aspects
     let buttonOneEl = document.createElement('button');
     buttonOneEl.name = 'selfEsteem';
     buttonOneEl.type = 'submit';
     buttonOneEl.textContent = 'Self Esteem';
-    buttons.appendChild(buttonOneEl);
+    aspect.appendChild(buttonOneEl);
   }
   else if (cardType === 'physical') {
 
@@ -94,44 +95,102 @@ function aspectMainChange() {
     buttonTwoEl.name = 'nutrition';
     buttonTwoEl.type = 'submit';
     buttonTwoEl.textContent = 'Nutrition';
-    buttons.appendChild(buttonTwoEl);
+    aspect.appendChild(buttonTwoEl);
   }
   let secondQuestion = document.createElement('p');
   secondQuestion.textContent = 'Here are a few things we can work on with you';
   question.appendChild(secondQuestion);
 }
 
-//Pick card to populate selection
+//Frame 3 change
+//title change frame 3
+function cardTitleChange() {
+  while (title.firstChild) {
+    title.removeChild(title.firstChild);
+  }
+  let cardTitle = document.createElement('h1');
+  cardTitle.textContent = `Please select a ${cardSubType} wellness task below`;
+  title.appendChild(cardTitle);
+}
+/*Pick card to populate selection - find deck in either physical or mental deck with proper subtype and then use to display properly randomized card*/
+function cardPicker() {
+  if (cardType === mental) {
 
+  }
+}
+// populate card
+function cardMain() {
+  //clear main
+  let appPoint = document.getElementById('apppoint');
+  while (appPoint.firstChild) {
+    appPoint.removeChild(appPoint.firstChild);
+  }
+  let buttons = document.getElementById('aspects');
+  while (buttons.firstChild) {
+    buttons.removeChild(buttons.firstChild);
+  }
+  let greeting = document.getElementById('main');
+  while (greeting.firstChild) {
+    greeting.removeChild(greeting.firstChild);
+  }
+  let question = document.getElementById('question');
+  while (question.firstChild) {
+    question.removeChild(question.firstChild);
+  }
+  // render Card Back
+  cardBackLoader();
 
+}
 
 //event handler for wellness option
 function handleOption(event) {
   let optionClicked = event.target.value;
   cardType = optionClicked;
   aspectTitleChange();
-  console.log('changed to aspect '+ cardType);
+  console.log('changed to aspect ' + cardType);
+  //change to appropriate theme
   cssChange();
   console.log(`Css style changed to ${cardType}`);
   aspectMainChange();
   console.log('main changed');
   console.log('cardType:', cardType);
-  option.id = 'aspects';
+  option.removeEventListener('click', handleOption);
 }
 
 //event handler for aspect of wellness option chosen
-function handleAspect(event){
+function handleAspect(event) {
   let aspectClicked = event.target.name;
   cardSubType = aspectClicked;
-// next step: selected aspect takes you to three cards of sub-category and user selects
+  console.log('cardSubType', cardSubType);
+  cardTitleChange();
+  console.log('title changed');
+  cardMain();
+
+
+  // next step: selected aspect takes you to three cards of sub-category and user selects
 
 }
 
-// //event handler for what card has been clicked
-// function handleClick(event){
-//   let cardClicked = event.target.alt;
-// //card clicked flips displays tasks
-// }
+//event handler for what card has been clicked
+function handleClick() {
+  if (cardSubType === 'selfEsteem') {
+    let cardOne = document.createElement('img');
+    cardOne.src = './img/selfEsteem1.png';
+    cardOne.id = 'cardOne';
+    cardOne.class = 'card';
+    cardArea.appendChild(cardOne);
+  }
+  else if (cardSubType === 'nutrition') {
+    let cardOne = document.createElement('img');
+    cardOne.src = './img/nutrition1.png';
+    cardOne.id = 'cardOne';
+    cardOne.class = 'card';
+    cardArea.appendChild(cardOne);
+  }
+  cardArea.removeEventListener('click', handleClick);
+}
+//card clicked flips displays tasks
+
 
 // // (stretch goal) event handler for if activity was completed
 // function handleButton(event){
@@ -140,5 +199,5 @@ function handleAspect(event){
 
 option.addEventListener('click', handleOption);
 aspect.addEventListener('click', handleAspect);
-// /*elementId*/.addEventListener('click', handleClick);
+cardArea.addEventListener('click', handleClick);
 // /*elementId*/.addEventListener('click', handleButton);
