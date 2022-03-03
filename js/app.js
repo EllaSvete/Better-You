@@ -37,14 +37,14 @@ function cssChange(){
 if (cardType === 'physical'){
     link.rel  = 'stylesheet';
     link.type = 'text/css';
-    link.href = /*physical stylesheet reference*/;
+    link.href = 'css/physical.css';
     link.media = 'all';
     head.appendChild(link);
 }
   else if (cardType == 'mental') {
     link.rel  = 'stylesheet';
     link.type = 'text/css';
-    link.href = /*mental stylesheet reference*/;
+    link.href = 'css/mental.css';
     link.media = 'all';
     head.appendChild(link);
   }
@@ -55,11 +55,11 @@ function aspectTitleChange(){
     title.removeChild(title.firstChild);
   }
   let h2El = document.createElement('h2');
-  h2El.textContent = `What aspect of you ${cardType} wellness do you want to improve today?`;
+  h2El.textContent = `What aspect of your ${cardType} wellness do you want to improve today?`;
 }
 
 function aspectMainChange(){
-  let appPoint = document.getElementById('apppoint');
+  let appPoint = document.getElementById('mission');
   while(appPoint.firstChild){
     appPoint.removeChild(appPoint.firstChild);
   }
@@ -91,6 +91,7 @@ function handleOption(event){
   cardType = optionClicked;
   aspectTitleChange();
   aspectMainChange();
+  cssChange();
 }
 
 //event handler for aspect of wellness option chosen
