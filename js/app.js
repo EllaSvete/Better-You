@@ -5,9 +5,10 @@ let mentalCards = [];
 let physicalCards = [];
 let cardType = 'none';
 let cardSubType = 'none';
+let cardDisplay = 'none';
 let cardChoice = NaN;
 
-// DOM REFERENCES 
+// DOM REFERENCES
 const title = document.getElementById('title');
 const option = document.getElementById('button');
 const aspect = document.getElementById('aspects');
@@ -16,7 +17,6 @@ const cardArea = document.getElementById('cardarea');
 //constructor function moved to own js files for card decks
 
 //img loader for card back - if person clicks physical or mental ID cardback styling
-//TODO: link to cardback ID in HTML 
 function cardBackLoader() {
   let cardOneBack = document.createElement('img');
   cardOneBack.id = 'cardback';
@@ -24,14 +24,14 @@ function cardBackLoader() {
   if (cardType === 'physical') {
     cardOneBack.src = './img/physicalcardback.png';
   }
-  else if (cardType === 'mental'); {
+  else if (cardType === 'mental') {
     cardOneBack.src = './img/mentalcardback.png';
   }
   cardArea.appendChild(cardOneBack);
   console.log('card back loaded');
 }
 
-//CSS Loader Function 
+//CSS Loader Function
 //TODO: link physical and mental stylesheets
 function cssChange() {
   const head = document.getElementById('head');
@@ -64,7 +64,7 @@ function aspectTitleChange() {
 
 // Change main body of frame 2
 function aspectMainChange() {
-  //Remove all children 
+  //Remove all children
   let appPoint = document.getElementById('apppoint');
   while (appPoint.firstChild) {
     appPoint.removeChild(appPoint.firstChild);
@@ -109,13 +109,26 @@ function cardTitleChange() {
     title.removeChild(title.firstChild);
   }
   let cardTitle = document.createElement('h1');
-  cardTitle.textContent = `Please select a ${cardSubType} wellness task below`;
+  cardTitle.textContent = `Please select a ${cardDisplay} wellness task below`;
   title.appendChild(cardTitle);
 }
 /*Pick card to populate selection - find deck in either physical or mental deck with proper subtype and then use to display properly randomized card*/
 function cardPicker() {
-  if (cardType === mental) {
-
+  if (cardSubType === 'selfEsteem') {
+    cardChoice = Math.floor(Math.random() * selfEsteemCardList.length);
+    let cardOne = document.createElement('img');
+    cardOne.src = mentalCards[0][cardChoice].src;
+    cardOne.id = 'cardOne';
+    cardOne.class = 'card';
+    cardArea.appendChild(cardOne);
+  }
+  else if (cardType === 'physical') {
+    cardChoice = Math.floor(Math.random() * nutritionCardList.length);
+    let cardOne = document.createElement('img');
+    cardOne.src = physicalCards[0][cardChoice].src;
+    cardOne.id = 'cardOne';
+    cardOne.class = 'card';
+    cardArea.appendChild(cardOne);
   }
 }
 // populate card
@@ -160,7 +173,9 @@ function handleOption(event) {
 //event handler for aspect of wellness option chosen
 function handleAspect(event) {
   let aspectClicked = event.target.name;
+  let displayText = event.target.decktype;
   cardSubType = aspectClicked;
+  cardDisplay = displayText;
   console.log('cardSubType', cardSubType);
   cardTitleChange();
   console.log('title changed');
@@ -173,20 +188,7 @@ function handleAspect(event) {
 
 //event handler for what card has been clicked
 function handleClick() {
-  if (cardSubType === 'selfEsteem') {
-    let cardOne = document.createElement('img');
-    cardOne.src = './img/selfEsteem1.png';
-    cardOne.id = 'cardOne';
-    cardOne.class = 'card';
-    cardArea.appendChild(cardOne);
-  }
-  else if (cardSubType === 'nutrition') {
-    let cardOne = document.createElement('img');
-    cardOne.src = './img/nutrition1.png';
-    cardOne.id = 'cardOne';
-    cardOne.class = 'card';
-    cardArea.appendChild(cardOne);
-  }
+  cardPicker();
   cardArea.removeEventListener('click', handleClick);
 }
 //card clicked flips displays tasks
