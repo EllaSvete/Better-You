@@ -80,6 +80,7 @@ nav {
 }
 
 #apppoint {
+
   border-radius: 15px;
   text-align: center;
   margin-top: 10px;
@@ -137,7 +138,9 @@ border-radius: 10px;
 }
 
 
-#button{
+
+#buttons{
+
   border-radius: 15px;
   line-height: 70px;
   text-align: center;
@@ -149,13 +152,6 @@ border-radius: 10px;
   height: 70px;
   margin-bottom: 60px;
 }
-
-
-
-
-
-
-
 
 
 button {

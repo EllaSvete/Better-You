@@ -46,6 +46,7 @@ function cssChange() {
     link.rel = 'stylesheet';
     link.type = 'text/css';
     link.href = './css/mental.css';
+
     head.appendChild(link);
   }
 }
@@ -56,6 +57,7 @@ function aspectTitleChange() {
   while (title.firstChild) {
     title.removeChild(title.firstChild);
   }
+
   //Replace header of Page
   let h1El = document.createElement('h1');
   h1El.textContent = `What aspect of your ${cardType} wellness do you want to improve today?`;
@@ -165,10 +167,12 @@ function handleOption(event) {
   cssChange();
   console.log(`Css style changed to ${cardType}`);
   aspectMainChange();
+
   console.log('main changed');
   console.log('cardType:', cardType);
+  option.id = 'aspects';
   option.removeEventListener('click', handleOption);
-}
+
 
 //event handler for aspect of wellness option chosen
 function handleAspect(event) {
