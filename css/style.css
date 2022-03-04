@@ -97,12 +97,13 @@ nav {
 #apppoint {
   border-radius: 15px;
   text-align: center;
-  margin-top: 10px;
+  margin-top: 30px;
   margin-left: auto;
   margin-right: auto;
   width: 50%;
   font-size: 18px;
-  padding: 15px;
+  padding: 20px;
+  padding-top: 35px;
   background-color: rgb(200, 233, 248);
   box-shadow: 3px 3px 2px 1px rgb(82, 101, 119);
   height: max-content;
@@ -111,7 +112,9 @@ nav {
 }
 
 #apppoint p {
-  font-size: 20px;
+  font-size: 18px;
+  line-height: 30px;
+  padding-bottom: 15px;
 }
 
 #colorspan {
@@ -125,6 +128,7 @@ nav {
   height: auto;
   width: 65%;
   border: 2px solid rgb(0,67,131);
+  line-height: 25px;
 }
 
 #main{
@@ -139,7 +143,10 @@ box-shadow: 3px 3px 2px 1px rgb(82,101,119);
 border-radius: 10px;
 padding-left: 15px;
 padding-right: 15px;
+padding-top: 20px;
+padding-bottom: 20px;
 color: black;
+font-size: 20px;
 background-color: rgb(203, 197, 240);
 }
 
@@ -153,6 +160,8 @@ background-color: rgb(203, 197, 240);
   width: max-content;
   padding-left: 15px;
   padding-right: 15px;
+  padding-top: 25px;
+  padding-bottom: 25px;
   font-size: 25px;
   background-color: rgb(255,199,153);
   box-shadow: 3px 3px 2px 1px rgb(82, 101, 119);
