@@ -118,7 +118,7 @@ function cardTitleChange() {
     title.removeChild(title.firstChild);
   }
   let cardTitle = document.createElement('h1');
-  cardTitle.textContent = `Please select a ${cardDisplay} wellness task below`;
+  cardTitle.textContent = `Please select a wellness task below`;
   title.appendChild(cardTitle);
 }
 /*Pick card to populate selection - find deck in either physical or mental deck with proper subtype and then use to display properly randomized card*/

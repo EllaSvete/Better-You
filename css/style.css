@@ -75,8 +75,15 @@ nav {
   height: max-content;
   color: rgb(255,199,153);
   font-family: 'Signika Negative', sans-serif;
+  text-decoration: none;
 }
-/*rgb(0,67,131)*/
+
+#brand:hover {
+  cursor:pointer;
+  transform: scale(1.1);
+  transition: 500ms;
+}
+
 #title {
   width: 0;
   height:0;
