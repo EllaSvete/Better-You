@@ -1,4 +1,69 @@
-const ctx = document.getElementById('results-chart').getContext('2d');
+let mentalCards = [];
+let physicalCards = [];
+let selfEsteemDeck = [];
+let nutritionDeck = [];
+let retrieveMentalDeck1 = localStorage.getItem('selfEsteemDeckStorage');
+let retrievePhysicalDeck1 = localStorage.getItem('nutritionDeckStorage');
+
+
+
+
+
+// let storeData = function () {
+//     const imageJSON = JSON.stringify(Product.productArray);
+//     localStorage.setItem('mental','physical', imageJSON);
+// }
+
+<script>
+
+    const myChart = new Chart(
+    document.getElementById('myChart'),
+    config
+    );
+</script>
+
+let mentalChartData = NaN;
+
+function calcMentalChartData() {
+    for (let i = 0; i < mentalCards.length; i++) {
+        for (let j = 0; j < selfEsteemDeck.length; j++) {
+            mentalChartData += mentalCards[i][j].completed;
+
+        }
+
+    }
+
+}
+let physicalChartData = NaN;
+
+function calcPhysicalChartData() {
+
+    for (let i = 0; i < physicalCards.length; i++) {
+        for (let j = 0; j < nutritionDeck.length; j++) {
+            physicalCardsData += physicalCards[i][j].completed
+        }
+
+    }
+}
+
+//parse data from storage
+function parseData() {
+    let parsedMentalDeck1 = JSON.parse(retrieveMentalDeck1);
+    selfEsteemDeck = parsedMentalDeck1;
+    console.log('sed', selfEsteemDeck)
+    let parsedPhysicalDeck1 = JSON.parse(retrievePhysicalDeck1);
+    nutritionDeck = parsedPhysicalDeck1;
+    //distribute Data
+    mentalCards.push(selfEsteemDeck);
+    console.log(mentalCards);
+    physicalCards.push(nutritionDeck);
+    console.log(physicalCards);
+}
+parseData();
+calcMentalChartData();
+calcPhysicalChartData();
+
+const ctx = document.getElementById('myChart').getContext('2d');
 const imageChart = new Chart(ctx, {
 
     type: 'bar',
@@ -7,17 +72,17 @@ const imageChart = new Chart(ctx, {
     data: {
         labels: imageNamesArray,
         datasets: [{
-            label: 'Image Votes',
+            label: 'mental',
             borderColor: '#F2C078',
             backgroundColor: '#345995',
             hoverBackgroundColor: '#F2C078',
-            data: imageVotesArray
+            data: mentalChartData
         }, {
-            label: 'Times Image Was Shown',
+            label: 'physical',
             borderColor: '#F2C078',
             backgroundColor: '#CA1551',
             hoverBackgroundColor: '#3A2E39',
-            data: ImageShownArray
+            data: physicalChartData
         }]
     },
 
