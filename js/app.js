@@ -7,6 +7,7 @@ let cardType = 'none';
 let cardSubType = 'none';
 let cardDisplay = 'none';
 let cardChoice = NaN;
+let chosenTask = [];
 let selfEsteemDeck = [];
 let nutritionDeck = [];
 
@@ -16,6 +17,8 @@ const option = document.getElementById('buttons');
 const quest = document.getElementById('question');
 const aspect = document.getElementById('aspects');
 const cardArea = document.getElementById('cardarea');
+const modal = document.getElementById('myModal');
+const span = document.getElementsByClassName('close')[0];
 let retrieveMentalDeck1 = localStorage.getItem('selfEsteemDeckStorage');
 console.log(retrieveMentalDeck1)
 let retrievePhysicalDeck1 = localStorage.getItem('nutritionDeckStorage');
@@ -130,6 +133,7 @@ function cardPicker() {
     cardOne.id = 'cardOne';
     cardOne.class = 'card';
     cardArea.appendChild(cardOne);
+    chosenTask = mentalCards[0][cardChoice];
   }
   else if (cardType === 'physical') {
     cardChoice = Math.floor(Math.random() * nutritionCardList.length);
@@ -139,6 +143,7 @@ function cardPicker() {
     cardOne.id = 'cardOne';
     cardOne.class = 'card';
     cardArea.appendChild(cardOne);
+    chosenTask = physicalCards[0][cardChoice];
   }
 }
 // populate card
@@ -199,9 +204,9 @@ function handleAspect(event) {
 
 //event handler for what card has been clicked
 function handleClick() {
+  modal.style.display = 'block';
   cardPicker();
   cardArea.removeEventListener('click', handleClick);
-  storeData();
 }
 //card clicked flips displays tasks
 
@@ -218,31 +223,31 @@ cardArea.addEventListener('click', handleClick);
 
 
 // Store data from selection
-function storeData(){
-let stringMentalDeck1 = JSON.stringify(selfEsteemDeck);
-let stringPhysicalDeck1 = JSON.stringify(nutritionDeck);
-localStorage.setItem('selfEsteemDeckStorage', stringMentalDeck1);
-localStorage.setItem('nutritionDeckStorage', stringPhysicalDeck1);
+function storeData() {
+  let stringMentalDeck1 = JSON.stringify(selfEsteemDeck);
+  let stringPhysicalDeck1 = JSON.stringify(nutritionDeck);
+  localStorage.setItem('selfEsteemDeckStorage', stringMentalDeck1);
+  localStorage.setItem('nutritionDeckStorage', stringPhysicalDeck1);
 }
 
 //Pull data from storage
 
 
 //parse data from storage
-function parseData(){
-let parsedMentalDeck1 = JSON.parse(retrieveMentalDeck1);
-selfEsteemDeck = parsedMentalDeck1;
-console.log('sed', selfEsteemDeck)
-let parsedPhysicalDeck1 = JSON.parse(retrievePhysicalDeck1);
-nutritionDeck = parsedPhysicalDeck1;
-//distribute Data
-mentalCards.push(selfEsteemDeck);
-console.log(mentalCards);
-physicalCards.push(nutritionDeck);
-console.log(physicalCards);
+function parseData() {
+  let parsedMentalDeck1 = JSON.parse(retrieveMentalDeck1);
+  selfEsteemDeck = parsedMentalDeck1;
+  console.log('sed', selfEsteemDeck)
+  let parsedPhysicalDeck1 = JSON.parse(retrievePhysicalDeck1);
+  nutritionDeck = parsedPhysicalDeck1;
+  //distribute Data
+  mentalCards.push(selfEsteemDeck);
+  console.log(mentalCards);
+  physicalCards.push(nutritionDeck);
+  console.log(physicalCards);
 }
 
-function initializePage(){
+function initializePage() {
   if (retrieveMentalDeck1) {
     parseData();
   }
@@ -251,7 +256,25 @@ function initializePage(){
   }
 }
 
-function buildDecks(){
-createSelfEsteemDeck();
-createNutritionDeck();
+function buildDecks() {
+  createSelfEsteemDeck();
+  createNutritionDeck();
+}
+
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() {
+  modal.style.display = 'none';
+};
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = 'none';
+  }
+};
+
+function committed () {
+  chosenTask.completed++;
+  storeData();
+  modal.style.display = 'none';
 }
