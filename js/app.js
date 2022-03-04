@@ -13,6 +13,7 @@ let nutritionDeck = [];
 
 // DOM REFERENCES
 const title = document.getElementById('title');
+const main = document.getElementById('main');
 const option = document.getElementById('buttons');
 const quest = document.getElementById('question');
 const aspect = document.getElementById('aspects');
@@ -157,10 +158,6 @@ function cardMain() {
   while (buttons.firstChild) {
     buttons.removeChild(buttons.firstChild);
   }
-  let greeting = document.getElementById('main');
-  while (greeting.firstChild) {
-    greeting.removeChild(greeting.firstChild);
-  }
   let question = document.getElementById('question');
   while (question.firstChild) {
     question.removeChild(question.firstChild);
@@ -184,6 +181,7 @@ function handleOption(event) {
   console.log('main changed');
   console.log('cardType:', cardType);
   option.parentElement.removeChild(option);
+  main.parentElement.removeChild(main);
   option.removeEventListener('click', handleOption);
 }
 
