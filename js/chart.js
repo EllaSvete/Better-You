@@ -4,23 +4,13 @@ let selfEsteemDeck = [];
 let nutritionDeck = [];
 let retrieveMentalDeck1 = localStorage.getItem('selfEsteemDeckStorage');
 let retrievePhysicalDeck1 = localStorage.getItem('nutritionDeckStorage');
-
+let datasets = ['mental','physical'];
 
 
 
 
 // let storeData = function () {
 //     const imageJSON = JSON.stringify(Product.productArray);
-//     localStorage.setItem('mental','physical', imageJSON);
-// }
-
-<script>
-
-    const myChart = new Chart(
-    document.getElementById('myChart'),
-    config
-    );
-</script>
 
 let mentalChartData = NaN;
 
@@ -40,7 +30,7 @@ function calcPhysicalChartData() {
 
     for (let i = 0; i < physicalCards.length; i++) {
         for (let j = 0; j < nutritionDeck.length; j++) {
-            physicalCardsData += physicalCards[i][j].completed
+            physicalChartData += physicalCards[i][j].completed
         }
 
     }
@@ -70,7 +60,7 @@ const imageChart = new Chart(ctx, {
 
 
     data: {
-        labels: imageNamesArray,
+        labels: datasets,
         datasets: [{
             label: 'mental',
             borderColor: '#F2C078',
