@@ -4,9 +4,11 @@
 <head id="head">
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="reset.css" href="css/reset.css">
+  <link rel="stylesheet" href="css/reset.css">
   <link id ="basestyle" rel="stylesheet" href="css/style.css">
-  <title>Better</title>
+  <link rel="stylesheet" href="./css/modal.css">
+  <title>Better You</title>
+
   
 <style>
 
@@ -56,6 +58,7 @@
     <div id="cardarea">
 
     </div>
+    
   </main>
   </div>
 
@@ -68,10 +71,27 @@
 
     </div>
   </footer>
+  <div id="myModal" class="modal">
+
+    <!-- Modal content -->
+    <div class="modal-content">
+      <div class="modal-header">
+        <span class="close">&times;</span>
+        <h2>You are accountable for you. No one can make you do something you don't want to do!</h2>
+      </div>
+      <div class="modal-body">
+      <button id="modalBtnOne" onClick = "committed();">I commit to this task!</button>
+      <button id="modalBtnTwo" onClick = "window.location.reload();">Give me a different task</button>
+      </div>
+    </div>
+  
+  </div>
+
 
   <script src="./js/app.js"></script>
   <script src="./js/mentalcards.js"></script>
   <script src="./js/physicalcards.js"></script>
+  <script src="./js/modal.js"></script>
 </body>
 
 </html>
